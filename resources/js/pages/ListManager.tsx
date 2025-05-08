@@ -3,7 +3,7 @@ import { Head } from "@inertiajs/react";
 import { useState } from "react";
 
 export default function ListManager() {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<any[ ]>([]);
     const addItem = () => {        setItems([...items, `Item ${items.length + 1}`]);    };
     const removeItem = (index :any) => {        setItems(items.filter((_, i) => i !== index));    };
     return (

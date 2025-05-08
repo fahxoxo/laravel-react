@@ -63,4 +63,12 @@ Route::get('/list-manager', function () {
     return Inertia::render('ListManager');
 })->name('list-manager');
 
+//React State #37
+Route::get('/infinite-scroll', function () {
+    return Inertia::render('InfiniteScrollExample');
+})->name('infinite-scroll');
 
+//quiz clock
+Route::get('/timercircle', function () {
+    return Inertia::render('TimerCircle');
+})->name('timercircle');
