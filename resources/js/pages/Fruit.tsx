@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../../css/fruit.css';
 
-function FilterableProductTable({ products }) {
+function FilterableProductTable({ products } : any) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
 
@@ -20,7 +20,7 @@ function FilterableProductTable({ products }) {
   );
 }
 
-function ProductCategoryRow({ category }) {
+function ProductCategoryRow({ category } : any) {
   return (
     <tr>
       <th colSpan="2">
@@ -30,7 +30,7 @@ function ProductCategoryRow({ category }) {
   );
 }
 
-function ProductRow({ product }) {
+function ProductRow({ product } : any) {
   const name = product.stocked ? product.name :
     <span style={{ color: 'red' }}>
       {product.name}
@@ -44,11 +44,11 @@ function ProductRow({ product }) {
   );
 }
 
-function ProductTable({ products, filterText, inStockOnly }) {
+function ProductTable({ products, filterText, inStockOnly } : any) {
   const rows = [];
   let lastCategory = null;
 
-  products.forEach((product) => {
+  products.forEach((product : any) => {
     if (
       product.name.toLowerCase().indexOf(
         filterText.toLowerCase()
@@ -92,7 +92,7 @@ function SearchBar({
   inStockOnly,
   onFilterTextChange,
   onInStockOnlyChange
-}) {
+} : any) {
   return (
     <form>
       <input 
