@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Book;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -72,3 +74,27 @@ Route::get('/infinite-scroll', function () {
 Route::get('/timercircle', function () {
     return Inertia::render('TimerCircle');
 })->name('timercircle');
+
+// react and datatbase #36
+// use App\Models\Product;
+Route::get('/product', function () {
+    $products = Product::all();
+    return Inertia::render('ProductList', compact('products') );
+})->name('product');
+
+// #64
+Route::get('/product-others', function () {
+    return Inertia::render('ProductOthers');
+})->name('product-others');
+
+// Quiz2 book
+// use App\Models\Product;
+Route::get('/book', function () {
+    $books = Book::all();
+    return Inertia::render('BookList', compact('books') );
+})->name('book');
+
+// routes/web.php
+Route::get('/book-others', function () {
+    return Inertia::render('BookOthers');
+})->name('book-others');
